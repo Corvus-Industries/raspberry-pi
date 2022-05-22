@@ -4,7 +4,7 @@ cd ./Documents/
 echo "Installing dependencies..."
 
 sudo apt-get install git ninja-build pkg-config gcc g++ systemd python3
-python3 -m pip install meson>=0.55
+python3 -m pip install "meson>=0.55"
 
 echo "Cloning mavlink-router (https://github.com/mavlink-router/mavlink-router)"
 
