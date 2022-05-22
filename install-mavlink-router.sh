@@ -13,7 +13,7 @@ cd mavlink-router
 
 echo "Building mavlink-router..."
 
-meson setup build .
+python3 -m meson setup build .
 
 ninja -C build
 
