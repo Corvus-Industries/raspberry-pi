@@ -1,7 +1,20 @@
 # Raspberry-PI
 Files for configuring the corvus raspberry pi.
 
-## accesspoint.sh - used to enable and disable the pi's wifi access point
+lscameras - shortcut for listing available cameras
+gstreamerstart - script for starting gstreamer connection
+
+Installation process for all scripts is the same:
+
+1. Download the script (e.g.: using wget)
+2. Give run permissions to the script (`chmod +x SCRIPT_NAME`)
+3. Move the script to `/usr/local/bin`
+
+See the below installation instructions for accesspoint.sh for more information.
+
+## accesspoint.sh
+
+Used to enable and disable the pi's wifi access point.
 
 (Note: due to unfamiliarity with using bash scripting, this script is crude, but still functional)
 
