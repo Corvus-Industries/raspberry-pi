@@ -6,7 +6,7 @@ gstreamerstart - script for starting gstreamer connection
 
 **Run install.sh to install all scripts.**
 
-Installation process for all scripts is the same:
+Installation process for all individual scripts is the same:
 
 1. Download the script (e.g.: using wget)
 2. Give run permissions to the script (`chmod +x SCRIPT_NAME`)
