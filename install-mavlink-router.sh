@@ -1,4 +1,5 @@
 mkdir -p ./Documents/
+cd ./Documents/
 
 echo "Installing dependencies..."
 
