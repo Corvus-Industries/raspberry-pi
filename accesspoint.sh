@@ -11,7 +11,7 @@ then
 	sudo systemctl stop hostapd
 
 	# modify config file
-	sudo sed -i 's/\n# denyinterfaces wlan0/\ndenyinterfaces wlan0/' /etc/dhcpcd.conf
+	sudo sed -i 's/# denyinterfaces wlan0/denyinterfaces wlan0/' /etc/dhcpcd.conf
 
 	# enable access point services
 	sudo systemctl start dhcpcd
@@ -27,7 +27,7 @@ else
 		sudo systemctl stop hostapd
 
 		# modify config file
-		sudo sed -i 's/\ndenyinterfaces wlan0/\n# denyinterfaces wlan0/' /etc/dhcpcd.conf
+		sudo sed -i 's/denyinterfaces wlan0/# denyinterfaces wlan0/' /etc/dhcpcd.conf
 
 		# enable access point services
 		sudo systemctl start dhcpcd
