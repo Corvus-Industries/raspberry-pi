@@ -4,6 +4,8 @@ Files for configuring the corvus raspberry pi.
 lscameras - shortcut for listing available cameras
 gstreamerstart - script for starting gstreamer connection
 
+**Run install.sh to install all scripts.**
+
 Installation process for all scripts is the same:
 
 1. Download the script (e.g.: using wget)
