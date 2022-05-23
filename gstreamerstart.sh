@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
+
+# the gstreamer pipeline is currently incorrect
 
 echo "Starting gstreamer stream to ip $2 from camera on $1!" 
 

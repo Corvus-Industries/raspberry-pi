@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# Installs mavlink-router.
+
 mkdir -p ./Documents/
 cd ./Documents/
 

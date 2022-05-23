@@ -1,5 +1,4 @@
-
-
+#!/bin/bash
 
 # Install hostapd and dnsmasq
 echo "Installing access point services...\n"
