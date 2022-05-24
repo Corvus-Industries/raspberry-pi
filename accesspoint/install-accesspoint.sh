@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [$# < 2]
+if [ $# -lt 2 ]
 then
     echo "SSID (accesspoint name) and password not provided."
     exit 1
