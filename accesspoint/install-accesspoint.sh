@@ -6,6 +6,14 @@ then
     exit 1
 fi
 
+password_length=`expr length $2`
+
+if [ password_length -lt 8 ]
+then
+    echo "Password not long enough (must be 8 characters or longer)."
+    exit 1
+fi
+
 echo "Starting accesspoint installation..."
 
 # Install hostapd and dnsmasq
@@ -44,7 +52,7 @@ echo "Configuring hostapd. Setting ssid to 'corvus-pi' and password to 'corvusin
 
 sudo echo "interface=wlan0
 driver=nl80211
-ssid=corvus-pi
+ssid=$1
 hw_mode=g
 channel=6
 ieee80211n=1
@@ -55,7 +63,7 @@ auth_algs=1
 ignore_broadcast_ssid=0
 wpa=2
 wpa_key_mgmt=WPA-PSK
-wpa_passphrase=corvusindustries
+wpa_passphrase=$2
 rsn_pairwise=CCMP" >> /etc/hostapd/hostapd.conf
 
 # Configure hostapd config file location
