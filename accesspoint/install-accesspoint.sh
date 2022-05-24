@@ -1,20 +1,28 @@
 #!/bin/bash
 
+if [$# < 2]
+then
+    echo "SSID (accesspoint name) and password not provided."
+    exit 1
+fi
+
+echo "Starting accesspoint installation..."
+
 # Install hostapd and dnsmasq
-echo "Installing access point services...\n"
+echo "Installing access point services..."
 sudo apt-get install hostapd dnsmasq
 
 # Temporarily disable the services
-echo "Temporarily disabling services...\n"
+echo "Temporarily disabling services..."
 sudo systemctl stop hostapd
 sudo systemctl stop dnsmasq
 
 # Block wlan0 (wifi device) from dhcpcd (default networking service)
-echo "Blocking wlan0 on dhcpcd...\n"
+echo "Blocking wlan0 on dhcpcd..."
 sudo echo "denyinterfaces wlan0" >> /etc/dhcpcd.conf
 
 # Set static IP
-echo "Setting Static IP for PI on 192.168.5.1...\n"
+echo "Setting Static IP for PI on 192.168.5.1..."
 
 sudo echo "
 auto lo
@@ -75,5 +83,5 @@ sudo wget https://gist.githubusercontent.com/brokenfloppydisk/78848b9ec7c67a9847
 sudo chmod +x accesspoint.sh
 sudo mv ./accesspoint.sh /usr/local/bin/accesspoint
 
-echo "Installation finished. Run accesspoint start to run the access point and run accesspoint stop to stop it."
+echo "Accesspoint installation finished. Run accesspoint start to run the access point and run accesspoint stop to stop it."
 echo "Reboot the system to finalize installation."
