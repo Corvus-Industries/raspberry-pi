@@ -6,7 +6,7 @@ then
     exit 1
 fi
 
-password_length=`expr length $2`
+password_length=`expr length "$2"`
 
 if [ password_length -lt 8 ]
 then
