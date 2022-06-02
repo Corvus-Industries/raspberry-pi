@@ -12,13 +12,17 @@ void setup() {
 }
 
 void loop() {
+    myServo.write(90);
     if (Serial.parseInt() != 1) {
+        Serial.write("Waiting...\n");
         return
     }
+    Servo.write("Opening...\n");
     for (int pos = initialAngle; pos <= openAngle; pos += 1) {
         myServo.write(pos);
         delay(15);
     }
+    Servo.write("Closing...\n");
     for (int pos = openAngle; pos >= closedAngle; pos -= 1) {
         myServo.write(pos);
         delay(15);
